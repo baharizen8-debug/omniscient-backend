@@ -3,63 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omniscient Gold Tracker</title>
-    <style>
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .card {
-            background-color: #1e293b;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            width: 320px;
-            border: 1px solid #334155;
-        }
-        h1 {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #facc15;
-            margin-bottom: 15px;
-        }
-        .status-container {
-            font-size: 1rem;
-            background: #0f172a;
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-            width: 80%;
-        }
-        #market-status {
-            font-weight: bold;
-        }
-    </style>
+    <title>Omniscient Gold Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-[#090d16] text-slate-100 font-sans p-3 max-w-md mx-auto">
 
-    <div class="card">
-        <h1>Omniscient Gold Tracker</h1>
-        <div class="price" id="gold-price">Loading...</div>
-        <div class="status-container">
-            Status: <span id="market-status">Memeriksa...</span>
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
+        <div class="flex items-center space-x-2">
+            <span class="text-amber-400 font-bold text-lg">Ω</span>
+            <span class="font-bold tracking-wider text-sm">OMNISCIENT <span class="text-amber-400 font-light">GOLD RESEARCHER</span></span>
+        </div>
+        <div class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-300 border border-slate-700">
+            🔔 • 👤
         </div>
     </div>
-    
-    <script src="/static/script.js"></script>
+
+    <!-- Main Price Banner -->
+    <div class="bg-[#111827] p-4 rounded-xl border border-slate-800 mb-4 shadow-lg">
+        <div class="flex items-baseline space-x-2">
+            <span id="gold-price" class="text-3xl font-extrabold text-white">$2,415.80</span>
+            <span id="gold-change" class="text-emerald-400 text-xs font-semibold">+12.40 (+0.52%)</span>
+        </div>
+        
+        <!-- Mock Chart Area -->
+        <div class="mt-3 bg-[#0d1322] h-28 rounded-lg border border-slate-800/60 relative flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <svg class="w-full h-full text-amber-400/80" viewBox="0 0 300 100" preserveAspectRatio="none">
+                <path d="M0,80 Q75,60 150,40 T300,20" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span class="absolute text-[10px] tracking-widest text-amber-500/70 font-mono bg-black/40 px-2 py-1 rounded border border-amber-500/20">REAL-TIME DATA STREAM ACTIVE</span>
+        </div>
+    </div>
+
+    <!-- Top Macro Drivers -->
+    <div class="bg-[#111827] p-4 rounded-xl border border-slate-800 mb-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center justify-between">
+            <span>⚡ Top Macro Drivers</span>
+        </div>
+        <div class="space-y-3 text-xs">
+            <div class="flex justify-between items-center border-b border-slate-800/60 pb-2">
+                <div>
+                    <div class="font-semibold">US Real Yields (10Y)</div>
+                    <div class="text-[10px] text-slate-400">1.85% (Falling)</div>
+                </div>
+                <span class="bg-emerald-950 text-emerald-400 px-2 py-1 rounded text-[10px] font-bold border border-emerald-800">HIGH BULL</span>
+                <span class="text-slate-400">35%</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-slate-800/60 pb-2">
+                <div>
+                    <div class="font-semibold">USD Index (DXY)</div>
+                    <div class="text-[10px] text-slate-400">103.20 (Sideways)</div>
+                </div>
+                <span class="bg-slate-800 text-slate-300 px-2 py-1 rounded text-[10px] font-bold border border-slate-700">NEUTRAL</span>
+                <span class="text-slate-400">25%</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <div>
+                    <div class="font-semibold">Geopolitical Risk</div>
+                    <div class="text-[10px] text-slate-400">Elevated (Tier 2)</div>
+                </div>
+                <span class="bg-emerald-950 text-emerald-400 px-2 py-1 rounded text-[10px] font-bold border border-emerald-800">MID BULL</span>
+                <span class="text-slate-400">20%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Algorithmic Stance -->
+    <div class="bg-[#111827] p-4 rounded-xl border border-amber-500/30 mb-4 shadow-lg">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">⚙️ Algorithmic Stance</div>
+        <div class="text-center my-3">
+            <div class="text-[10px] text-slate-400 uppercase tracking-widest">Recommended Action</div>
+            <div id="rec-action" class="text-2xl font-black text-emerald-400 tracking-wider my-1">LONG</div>
+            <div class="text-[10px] text-slate-400">CONFIDENCE: <span id="rec-conf" class="text-white font-bold">78%</span> | HORIZON: <span id="rec-horiz" class="text-white font-bold">1-3M</span></div>
+        </div>
+        <p id="rec-synopsis" class="text-[11px] text-slate-300 bg-[#0d1322] p-2.5 rounded border border-slate-800/80 leading-relaxed">
+            Model detects asymmetric upside skew driven by falling real yields converging with safe-haven inflows.
+        </p>
+    </div>
+
+    <!-- Scenario Probabilities -->
+    <div class="bg-[#111827] p-4 rounded-xl border border-slate-800 mb-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">📊 Scenario Probabilities</div>
+        <div class="space-y-2 text-xs">
+            <div>
+                <div class="flex justify-between mb-1"><span>BULL CASE (&gt;$2,450)</span> <span class="text-emerald-400">65%</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded overflow-hidden"><div class="bg-emerald-500 h-full w-[65%]"></div></div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1"><span>BASE CASE (CONSOLIDATION)</span> <span class="text-amber-400">25%</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded overflow-hidden"><div class="bg-amber-500 h-full w-[25%]"></div></div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1"><span>BEAR CASE (&lt;$2,380)</span> <span class="text-rose-400">10%</span></div>
+                <div class="w-full bg-slate-800 h-1.5 rounded overflow-hidden"><div class="bg-rose-500 h-full w-[10%]"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Early Warnings -->
+    <div class="bg-[#111827] p-4 rounded-xl border border-slate-800">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex justify-between">
+            <span>⚠️ Active Early Warnings</span>
+            <span class="text-rose-400 text-[10px] bg-rose-950/80 px-1.5 py-0.5 rounded border border-rose-900">2 Alerts</span>
+        </div>
+        <div class="bg-rose-950/20 border border-rose-900/40 p-2.5 rounded-lg text-xs">
+            <div class="font-bold text-rose-300">Sudden VIX Spike Detected</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Cross-asset volatility index rose &gt;15% intraday. Historically correlates with erratic gold price action.</div>
+        </div>
+    </div>
+
+    <!-- Script to fetch data -->
+    <script>
+        async function fetchGoldData() {
+            try {
+                let response = await fetch('/api/gold-data');
+                let data = await response.json();
+                document.getElementById('gold-price').innerText = '$' + data.price.toLocaleString();
+                document.getElementById('gold-change').innerText = data.change;
+                document.getElementById('rec-action').innerText = data.action;
+                document.getElementById('rec-conf').innerText = data.confidence;
+                document.getElementById('rec-horiz').innerText = data.horizon;
+                document.getElementById('rec-synopsis').innerText = data.synopsis;
+            } catch (error) {
+                console.error('Gagal mengambil data:', error);
+            }
+        }
+        setInterval(fetchGoldData, 5000);
+        fetchGoldData();
+    </script>
 </body>
 </html>
