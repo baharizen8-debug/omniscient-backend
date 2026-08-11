@@ -22,11 +22,14 @@ async def read_index():
 
 @app.get("/api/gold-data")
 def get_gold_data():
-    spot_gold = 2415.80 + round(random.uniform(0.10, 1.50), 2)
-    statuses = ["Bullish", "Bearish", "Stagflationary Fear"]
-    current_status = random.choice(statuses)
+    spot_gold = 2415.80 + round(random.uniform(-0.50, 1.50), 2)
+    change = "+12.40 (+0.52%)"
     
     return {
         "price": spot_gold,
-        "status": current_status
+        "change": change,
+        "action": "LONG",
+        "confidence": "78%",
+        "horizon": "1-3M",
+        "synopsis": "Model detects asymmetric upside skew driven by falling real yields converging with safe-haven inflows. Previous resistance at $2,400 now acting as structural support."
     }
