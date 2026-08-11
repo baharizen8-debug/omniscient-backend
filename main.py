@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 import random
 
 app = FastAPI()
@@ -12,17 +14,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-def read_root():
-    return {"message": "Omniscient Gold API is running"}
+app.mount("/static", StaticFiles(directory="."), name="static")
 
-@app.get("/api/market-data")
-def get_market_data():
-    spot_gold = 2415.80 + round(random.uniform(-2.00, 2.00), 2)
-    change = round(random.uniform(0.10, 1.50), 2)
+@app.get("/")
+async def read_index():
+    return FileResponse('index.html')
+
+@app.get("/api/gold-data")
+def get_gold_data():
+    spot_gold = 2415.80 + round(random.uniform(0.10, 1.50), 2)
+    statuses = ["Bullish", "Bearish", "Stagflationary Fear"]
+    current_status = random.choice(statuses)
     
     return {
-        "spot_gold": spot_gold,
-        "price_change": f"+{change} (+0.52%)",
-        "regime": "Stagflationary Fear"
+        "price": spot_gold,
+        "status": current_status
     }
